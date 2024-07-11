@@ -30,6 +30,14 @@ function checkConfPass(password, cPassword){
     return password === cPassword;
 }
 
+// Save Data
+function saveparams(form){
+    
+}
+
+
+
+
 // Check the Whole form
 function validateForm(form){
     // Initial Setting
@@ -115,11 +123,15 @@ function validateForm(form){
         cpassword.style.border= "#dc3545 3px solid"
         document.getElementById("cpassword-error").textContent = "password is not\
         the same as confirm password"
-        return false
+        isvalid = false
     }
 
-
-    return isValid; // to make it never submit
+    if (isvalid){
+        saveparams(form)
+        return true;
+    }else{
+        return false
+    }
 }
 
 // Define the onsubmit function of the form
