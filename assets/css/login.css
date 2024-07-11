@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #DDE6ED;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+}
+
+.container {
+    background-color: #27374D;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.input-field label {
+    margin-bottom: 5px;
+    color: #DDE6ED;
+}
+
+.input-field input[type="text"],
+.input-field input[type="email"],
+.input-field input[type="password"] {
+    padding: 10px;
+    border: 1px solid #526D82;
+    border-radius: 4px;
+    background-color: #9DB2BF;
+    color: #27374D;
+}
+.input-field input[type="text"]:focus,
+.input-field input[type="email"]:focus,
+.input-field input[type="password"]:focus {
+    outline: none;
+}
+
+.input-field input[type="radio"] {
+    margin-right: 5px;
+}
+
+.input-field span {
+    color: #DDE6ED;
+    margin-bottom: 5px;
+}
+
+.input-field input[type="submit"] {
+    background-color: #526D82;
+    color: #DDE6ED;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-field input[type="submit"]:hover {
+    background-color: #9DB2BF;
+}
+
+.input-field label[for="teacher"],
+.input-field label[for="student"] {
+    color: #DDE6ED;
+    margin-left: 5px;
+}

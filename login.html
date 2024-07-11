@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
-    <p>Welcome</p>
+    <div class="container">
+        <div class="content">
+            <form action="home.html" name="login" onsubmit="return checkLogin(form)">
+                <div class="input-field">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username">
+                    <span class="error-message" id="username-error"></span>
+                </div>
+                <div class="input-field">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                    <span class="error-message" id="password-error"></span>
+                </div>
+                <div class="input-field">
+                    <input type="submit" name="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="assets/js/login.js"></script>
 </body>
 </html>

@@ -30,31 +30,39 @@ function checkConfPass(password, cPassword){
     return password === cPassword;
 }
 
+// Check if username already Exists
+function checkUsernameExists(username) {
+    return localStorage.getItem(username) !== null;
+}
+
 // Save Data
-function saveparams(fname, lname, username, accountType, email, password){
+function saveparams(fname, lname, username, accountType, email, passwordHash){
     const formData = {
         fname: fname,
         lname: lname,
         accountType: accountType,
         email: email,
-        password: password,
-    };
+        passwordHash: passwordHash,
+    }
     localStorage.setItem(username, JSON.stringify(formData));
 }
 
+// Simple Hash function from chatgpt.com
+function simpleHash(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = (hash << 5) - hash + char;
+        hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+}
 
 
 
 // Check the Whole form
 function validateForm(form){
     // Initial Setting
-    fname = form["fname"]
-    lname = form["lname"]
-    username = form["username"]
-    accountType = form["accountType"]
-    email = form["email"]
-    password = form["password"]
-    cpassword = form["cpassword"]
     isValid = true
 
 
@@ -82,8 +90,15 @@ function validateForm(form){
 
     // Validate Username
     if (checkUsername(username.value)){
-        username.style.border= "#28a745 3px solid"
-        document.getElementById("username-error").textContent = ""
+        if (!checkUsernameExists(username.value)){
+            username.style.border= "#28a745 3px solid"
+            document.getElementById("username-error").textContent = ""
+        }else{
+            username.style.border= "#dc3545 3px solid"
+            document.getElementById("username-error").textContent = "Username\
+            already Exists"
+            isValid = false
+        }
     }else{
         username.style.border= "#dc3545 3px solid"
         document.getElementById("username-error").textContent = "Shall Not contain\
@@ -93,7 +108,6 @@ function validateForm(form){
 
     // Validate Account Type
     if (accountType.value){
-        accountType.style.border= "#28a745 3px solid"
         document.getElementById("accountType-error").textContent = ""
     }else{
         document.getElementById("accountType-error").textContent = "This field is required"
@@ -134,7 +148,7 @@ function validateForm(form){
     }
 
     if (isValid){
-        saveparams(fname.value, lname.value, username.value, accountType.value, email.value, password.value)
+        saveparams(fname.value, lname.value, username.value, accountType.value, email.value, simpleHash(password.value))
         return true;
     }else{
         return false;
@@ -144,3 +158,10 @@ function validateForm(form){
 // Define the form
 
 form = document.forms["register"]
+fname = form["fname"]
+lname = form["lname"]
+username = form["username"]
+accountType = form["accountType"]
+email = form["email"]
+password = form["password"]
+cpassword = form["cpassword"]
