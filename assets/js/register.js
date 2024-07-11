@@ -134,6 +134,6 @@ function validateForm(form){
     }
 }
 
-// Define the onsubmit function of the form
+// Define the form
 
 form = document.forms["register"]
