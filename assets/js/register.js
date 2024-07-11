@@ -32,6 +32,7 @@ function checkConfPass(password, cPassword){
 
 // Check the Whole form
 function validateForm(form){
+    // Initial Setting
     fname = form["fname"]
     lname = form["lname"]
     username = form["username"]
@@ -40,9 +41,18 @@ function validateForm(form){
     password = form["password"]
     cpassword = form["cpassword"]
 
+    // Validate First Name
+    if (checkName(fname.value)){
+        fname.style.border= "#28a745 3px solid"
+    }else{
+        fname.style.border= "#dc3545 3px solid"
+        return false;
+    }
+
+
+    return false; // to make it never submit
 }
 
 // Define the onsubmit function of the form
 
 form = document.forms["register"]
-form.onsubmit() = validateForm(form)

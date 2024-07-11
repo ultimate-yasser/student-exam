@@ -9,18 +9,21 @@
 <body>
     <div class="container">
         <div class="content">
-            <form action="" method="post" name="register">
+            <form action="" method="post" name="register" onsubmit="return validateForm(form)">
                 <div class="input-field">
                     <label for="fname">First Name</label>
                     <input type="text" name="fname" id="fname">
+                    <span class="error-message" id="fname-error"></span>
                 </div>
                 <div class="input-field">
                     <label for="lname">Last Name</label>
                     <input type="text" name="lname" id="lname">
+                    <span class="error-message" id="lname-error"></span>
                 </div>
                 <div class="input-field">
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username">
+                    <span class="error-message" id="username-error"></span>
                 </div>
                 <div class="input-field">
                     <span>Account Type</span>
@@ -28,18 +31,22 @@
                     <label for="teacher">Teacher</label>
                     <input type="radio" id="student" name="accountType" value="student">
                     <label for="student">Student</label>
+                    <span class="error-message" id="accountType-error"></span>
                 </div>
                 <div class="input-field">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email">
+                    <span class="error-message" id="email-error"></span>
                 </div>
                 <div class="input-field">
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password">
+                    <span class="error-message" id="password-error"></span>
                 </div>
                 <div class="input-field">
                     <label for="cpassword">Confirm Password</label>
                     <input type="password" name="cpassword" id="cpassword">
+                    <span class="error-message" id="cpassword-error"></span>
                 </div>
                 <div class="input-field">
                     <input type="submit" name="submit" value="Submit">
