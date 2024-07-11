@@ -133,7 +133,7 @@ function validateForm(form){
         isValid = false
     }
 
-    if (isvalid){
+    if (isValid){
         saveparams(fname.value, lname.value, username.value, accountType.value, email.value, password.value)
         return true;
     }else{
