@@ -31,8 +31,15 @@ function checkConfPass(password, cPassword){
 }
 
 // Save Data
-function saveparams(form){
-    
+function saveparams(fname, lname, username, accountType, email, password){
+    const formData = {
+        fname: fname,
+        lname: lname,
+        accountType: accountType,
+        email: email,
+        password: password,
+    };
+    localStorage.setItem(username, JSON.stringify(formData));
 }
 
 
@@ -116,21 +123,21 @@ function validateForm(form){
     }
 
     // Validate Password
-    if (checkConfPass(password, cpassword)){
+    if (checkConfPass(password.value, cpassword.value)){
         cpassword.style.border= "#28a745 3px solid"
         document.getElementById("cpassword-error").textContent = ""
     }else{
         cpassword.style.border= "#dc3545 3px solid"
         document.getElementById("cpassword-error").textContent = "password is not\
         the same as confirm password"
-        isvalid = false
+        isValid = false
     }
 
     if (isvalid){
-        saveparams(form)
+        saveparams(fname.value, lname.value, username.value, accountType.value, email.value, password.value)
         return true;
     }else{
-        return false
+        return false;
     }
 }
 
