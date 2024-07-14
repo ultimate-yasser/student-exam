@@ -1,0 +1,114 @@
+/* Root colors */
+:root {
+    --dark-blue: #27374D;
+    --medium-blue: #526D82;
+    --light-blue: #9DB2BF;
+    --lightest-blue: #DDE6ED;
+}
+
+/* Basic reset and body styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: var(--lightest-blue);
+    color: var(--dark-blue);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.content {
+    background-color: var(--light-blue);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+.quiz-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+    background-color: var(--medium-blue);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.question {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.question-head {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.question-number, .question-title {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.question-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.answer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.answer input[type="radio"] {
+    margin-right: 10px;
+}
+
+.answer label {
+    flex-grow: 1;
+    background-color: var(--lightest-blue);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.answer input[type="radio"]:checked + label {
+    background-color: var(--medium-blue);
+    color: white;
+}
