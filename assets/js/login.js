@@ -22,6 +22,9 @@ function checkLogin(form){
     }else{
         document.getElementById("username-error").textContent = ""
     }
+    if (checkStudent(data.accountType)){
+        form.action = "student_home.html"
+    }
     return true;
 }
 
@@ -34,5 +37,10 @@ function simpleHash(str) {
     }
     return hash;
 }
+
+function checkStudent(data){
+    return data == "student"
+}
+
 
 form = document.forms["login"]
