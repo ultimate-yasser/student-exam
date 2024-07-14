@@ -1,0 +1,128 @@
+/* Color palette */
+:root {
+    --dark-blue: #27374D;
+    --medium-blue: #526D82;
+    --light-blue: #9DB2BF;
+    --lightest-blue: #DDE6ED;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--lightest-blue);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--light-blue);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.primary-section {
+    background-color: var(--medium-blue);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.primary-section .span {
+    margin-bottom: 10px;
+}
+
+.head-section, .section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-field label {
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.input-field input, .input-field button {
+    padding: 10px;
+    border: 1px solid var(--medium-blue);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-field button {
+    background-color: var(--dark-blue);
+    color: white;
+    cursor: pointer;
+}
+
+.input-field button:hover {
+    background-color: var(--medium-blue);
+}
+
+.question-form .head {
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.answer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.answer input[type="text"] {
+    flex-grow: 1;
+}
+
+.foot {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.foot button {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.foot button:hover {
+    background-color: var(--medium-blue);
+}
