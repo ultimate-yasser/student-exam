@@ -10,21 +10,21 @@
     <div class="container">
         <div class="content">
             <div class="primary-section">
-                <div class="span">Prof. Yasser Salah</div>
+                <div class="span" id="profName">Prof. Yasser Salah</div>
                 <div class="span">Email: yasser75894@gmail.com</div>
             </div>
-            <div class="head-section">
-                <form class="head">
+            <div class="head-section" id="head-section">
+                <form class="head" name="exam-info">
                     <div class="input-field">
                         <label>Exam Name</label>
-                        <input type="text">
+                        <input type="text" name="examName">
                     </div>
                     <div class="input-field">
                         <label>Exam Time in Minutes</label>
-                        <input type="number">
+                        <input type="number" name="examTime">
                     </div>
                     <div class="input-field">
-                        <button type="submit">Create</button>
+                        <button type="button" id="createButton">Create</button>
                     </div>
                 </form>
             </div>
@@ -32,32 +32,35 @@
             <div class="section">
                 <form class="question-form">
                     <div class="head">
-                        <span>Question 1</span>
+                        <span>Question <span id="questionNumber">1</span></span>
                     </div>
                     <div class="question">
                         <label>question: </label>
-                        <input type="text" placeholder="write Your question here">
+                        <input type="text" placeholder="write Your question here" id="questionTitle">
                     </div>
                     <div class="answers">
                         <div class="answer">
-                            <input type="radio">
-                            <input type="text" placeholder="Answer 1">
+                            <input type="radio" name="answer">
+                            <input type="text" placeholder="Answer 1" id="answer1">
                         </div>
                         <div class="answer">
-                            <input type="radio">
-                            <input type="text" placeholder="Answer 2">
+                            <input type="radio" name="answer">
+                            <input type="text" placeholder="Answer 2" id="answer2">
                         </div>
                         <div class="answer">
-                            <input type="radio">
-                            <input type="text" placeholder="Answer 3">
+                            <input type="radio" name="answer">
+                            <input type="text" placeholder="Answer 3" id="answer3">
                         </div>
                         <div class="answer">
-                            <input type="radio">
-                            <input type="text" placeholder="Answer 4">
+                            <input type="radio" name="answer">
+                            <input type="text" placeholder="Answer 4" id="answer4">
                         </div>
                     </div>
                     <div class="foot">
-                        <button type="button">Next</button>
+                        <button type="button" id="nextButton">Next</button>
+                    </div>
+                    <div class="end">
+                        <button type="button" id="FinishButton">Finish and Save</button>
                     </div>
                 </form>
             </div>

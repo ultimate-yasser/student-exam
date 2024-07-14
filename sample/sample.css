@@ -126,3 +126,21 @@ body {
 .foot button:hover {
     background-color: var(--medium-blue);
 }
+
+.end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.end button {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.end button:hover {
+    background-color: var(--medium-blue);
+}
