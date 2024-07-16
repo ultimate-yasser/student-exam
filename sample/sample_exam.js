@@ -19,3 +19,30 @@ let secondTimer = setInterval(() => {
     }
     secondsRemain.innerText = secondsRemainValue.toString().padStart(2, '0'); // Update the displayed seconds
 }, 1000);
+
+let form = document.forms["quiz"];
+form.onsubmit = function(event) {
+    event.preventDefault(); // Prevent form submission to stay on the same page and see the alert
+
+    let score = 0; // Initialize score inside the function to reset it for each submission
+
+    let answer1 = document.getElementById("answer1");
+    let answer6 = document.getElementById("answer6");
+    let answer11 = document.getElementById("answer11");
+    let answer16 = document.getElementById("answer16");
+
+    if (answer1.checked) {
+        score += 1;
+    }
+    if (answer6.checked) {
+        score += 1;
+    }
+    if (answer11.checked) {
+        score += 1;
+    }
+    if (answer16.checked) {
+        score += 1;
+    }
+
+    alert("Your score is " + score);
+};
